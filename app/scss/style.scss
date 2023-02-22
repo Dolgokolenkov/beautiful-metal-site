@@ -1,0 +1,133 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  background: $accent;
+}
+.logo__img {
+  height: 80px;
+  width: 80px;
+}
+.main {
+  background-color: $bg;
+  padding-bottom: 125px;
+  &__links {
+    .main__link {
+      margin-top: 80px;
+      .link__name {
+        font-family: "Bahnshrift Light";
+        font-weight: 400;
+        font-size: 64px;
+        color: $accent;
+      }
+      .link__img {
+        display: block;
+        width: 930px;
+        margin-top: 30px;
+        margin: 30px auto 0;
+      }
+      &__slider {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        max-width: 930px;
+        margin: 0 auto;
+      }
+      &__dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        .dot {
+          width: 20px;
+          height: 20px;
+          background-color: $accent;
+          border-radius: 50px;
+        }
+        .dot + .dot {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+.contact--form {
+  background-color: $secondbg;
+  padding: 15px 40px 20px;
+  margin-top: 125px;
+  .form__title {
+    font-size: 40px;
+    color: $accent;
+  }
+  .form__input {
+    margin-top: 30px;
+    display: block;
+    font-size: 32px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    width: 835px;
+  }
+
+  .form__input::placeholder {
+    color: #fff;
+  }
+}
+
+.contact--us {
+  background-color: $forms;
+  display: inline-block;
+  padding: 15px 20px;
+  margin-top: 50px;
+  border-radius: 50px;
+  font-size: 32px;
+  color: #000;
+}
+
+.footer {
+  background-color: $accent;
+  color: $footertext;
+  &__text {
+    padding: 44px 0 32px;
+    font-size: 24px;
+  }
+}
+
+.services {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  &__item {
+    margin-top: 25px;
+    &__title {
+      padding: 15px 0;
+      display: block;
+      background-color: $secondbg;
+      width: 360px;
+      color: $accent;
+      font-size: 24px;
+      text-align: center;
+      border-radius: 50px;
+    }
+    .services__list {
+      margin-top: 25px;
+      .service {
+        color: #ffff;
+        font-size: 24px;
+        margin-left: 40px;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+@import "media";
