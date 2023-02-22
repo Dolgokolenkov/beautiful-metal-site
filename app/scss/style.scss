@@ -130,4 +130,48 @@
   }
 }
 
+.modal {
+  position: fixed;
+  display: none;
+  transition: all 0.5s;
+  right: 10%;
+  width: 350px;
+  background-color: $forms;
+  align-items: center;
+  border-radius: 50px;
+  text-align: center;
+  padding: 15px;
+  &__title {
+    color: #0d1902;
+    font-size: 24px;
+  }
+  &__contact {
+    background-color: $modaltextbg;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-top: 13px;
+    border-radius: 50px;
+    color: #0d1902;
+    font-size: 16px;
+  }
+  &__close {
+    position: absolute;
+    right: 25px;
+  }
+}
+
+.modal-show {
+  display: block;
+  animation: showBlock 1s linear forwards;
+}
+
+@keyframes showBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @import "media";
