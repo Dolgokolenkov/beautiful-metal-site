@@ -1,7 +1,7 @@
 import{ modal } from "./modalWindow.js";
-import { sliders } from "./sliders.js";
+import { createSliders} from "./sliders.js";
 
 document.addEventListener('DOMContentLoaded',()=>{
     modal();
-    sliders();
+    createSliders();
 });
