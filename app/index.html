@@ -91,13 +91,13 @@
                     </a>
                 </div>
             </section>
-            <form class="contact--form" action="#">
+            <form class="contact--form">
                 <h4 class="form__title">
                     Оставить заявку
                 </h4>
-                <input class="form__input" type="text" placeholder="ФИО">
-                <input class="form__input" type="text" placeholder="Номер телефона">
-                <a href="#" class="contact--us">Связаться с нами</a>
+                <input class="form__input" name="name" type="text" placeholder="ФИО" required>
+                <input class="form__input" name="phone" type="text" placeholder="Номер телефона" required>
+                <button type="submit" class="contact--us" value="СВЯЗАТЬСЯ С НАМИ">
             </form>
         </div>
     </main>
@@ -113,6 +113,7 @@
             </p>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
     <script type="module" src="js/main.min.js"></script>
 </body>
 </html>

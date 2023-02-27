@@ -1,4 +1,4 @@
-export function createSliders(){
+document.addEventListener("DOMContentLoaded",()=>{
     let links=document.querySelectorAll(".main__link");
     links.forEach((item)=>{
         let photos=item.querySelectorAll(".links__img"),
@@ -24,7 +24,6 @@ export function createSliders(){
             });
         }
         for(let i=0;i<photos.length;i++){
-            console.log(1);
             photos[i].addEventListener("click",()=>{
                 let width=linkInner.clientWidth;
                 clearActiveDot(dots);
@@ -39,27 +38,26 @@ export function createSliders(){
             });
         }
     });
-}
 
-function resizeSliders(){
-    let links=document.querySelectorAll(".main__link");
-    links.forEach((item)=>{
-        console.log(item);
-        let dots=item.querySelectorAll(".dot"),
-            linkInner=item.querySelector('.links__photos--inner');
-        console.log(dots.length);
-        for(let i=0;i<dots.length;i++){
-            if(dots[i].classList.contains("dot--active")){
-                let width=linkInner.clientWidth;
-                console.log(width);
-                linkInner.style.transform = `translateX(${-(i)*width}px)`;
-            }
+        function resizeSliders(){
+            let links=document.querySelectorAll(".main__link");
+            links.forEach((item)=>{
+                let dots=item.querySelectorAll(".dot"),
+                    linkInner=item.querySelector('.links__photos--inner');
+                for(let i=0;i<dots.length;i++){
+                    if(dots[i].classList.contains("dot--active")){
+                        let width=linkInner.clientWidth;
+                        console.log(width);
+                        linkInner.style.transform = `translateX(${-(i)*width}px)`;
+                    }
+                }
+            });
         }
-    });
-}
 
-function clearActiveDot(dots){
-    dots.forEach((e)=>{
-        e.classList.remove("dot--active");
-    });
-}
+        function clearActiveDot(dots){
+            dots.forEach((e)=>{
+                e.classList.remove("dot--active");
+            });
+        }
+});
+    
