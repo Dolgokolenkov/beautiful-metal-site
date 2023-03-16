@@ -7,13 +7,8 @@ $('.contact--form').on('submit', function (event) {
         submit = $('.submit', form),
         data = new FormData(),
         files = $('input[type=file]')
-
-
-    $('.submit', form).val('Отправка...');
-    $('input, textarea', form).attr('disabled','');
-
-    data.append( 'ФИО:', 		$('[name="name"]', form).val() );
-    data.append( 'Телефон:', 		$('[name="phone"]', form).val() );
+    data.append( 'ФИО', 		$('[name="name"]', form).val() );
+    data.append( 'Телефон', 		$('[name="phone"]', form).val() );
  
     files.each(function (key, file) {
         let cont = file.files;
@@ -25,7 +20,7 @@ $('.contact--form').on('submit', function (event) {
     });
     
     $.ajax({
-        url: '../dist/php/ajax.php',
+        url: 'php/ajax.php',
         type: 'POST',
         data: data,
         cache: false,
@@ -34,7 +29,6 @@ $('.contact--form').on('submit', function (event) {
         contentType: false,
         xhr: function() {
             let myXhr = $.ajaxSettings.xhr();
-
             if ( myXhr.upload ) {
                 myXhr.upload.addEventListener( 'progress', function(e) {
                     if ( e.lengthComputable ) {
@@ -45,14 +39,18 @@ $('.contact--form').on('submit', function (event) {
                     }
                 }, false );
             }
-
             return myXhr;
         },
         error: function( jqXHR, textStatus ) {
         },
         complete: function() {
             console.log('Complete')
-            form.reset() 
+            form.reset();
+            let modalComplete=document.querySelector(".modal--complete");
+            modalComplete.classList.remove("modal--complete__close--window");
+            modalComplete.classList.add("modal--complete__show");
+            console.log(modalComplete);
+            form.upload();
         }
     });
 
